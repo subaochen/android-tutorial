@@ -1,0 +1,276 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass ctex-book
+\begin_preamble
+%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{新宋体} %这里是字体名
+%中文断行
+\XeTeXlinebreaklocale “zh”
+\XeTeXlinebreakskip = 0pt plus 1pt
+%%%%%%%%%%%%%%%%%%%%%%%
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman 新宋体
+\font_sans 新宋体
+\font_typewriter 新宋体
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Android的开发环境
+\end_layout
+
+\begin_layout Standard
+谷歌已经宣布终止对Eclipse的官方支持，包括中止对Eclipse ADT插件以及Android Ant编译系统的支持，Android Studio
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+关于Android Studio和Eclipse的口水战，可以参考：http://www.zhihu.com/question/21534929
+\end_layout
+
+\end_inset
+
+正式成为Android官方支持的唯一开发环境。使用Android Studio开发Android应用程序的基本步骤如下所述。
+\end_layout
+
+\begin_layout Section
+安装JDK
+\end_layout
+
+\begin_layout Standard
+相信读者对于这个话题已经是老生常谈了，在这里再重点强调几点：
+\end_layout
+
+\begin_layout Itemize
+Android Studio 1.4以上版本需要JDK 7及其以上版本。
+\end_layout
+
+\begin_layout Itemize
+最好在你的开发机器上只保留一个JDK的版本，以免造成不必要的混乱。
+\end_layout
+
+\begin_layout Itemize
+设置JAVA_HOME环境变量。
+\end_layout
+
+\begin_layout Section
+下载和安装Android Studio
+\end_layout
+
+\begin_layout Standard
+官方的下载地址：http://developer.android.com/sdk/index.html。由于各种原因，这个网址可能无法访问，我们要感谢inferjay
+（http://www.inferjay.com）的辛勤劳动和贡献，大家也可以从这里下载最新的Android Studio：http://www.androiddev
+tools.cn 。写作本书时，Android Studio的最新版本是1.4。
+\end_layout
+
+\begin_layout Standard
+Android Studio是绿色软件，因此安装很简单，直接解压缩到合适的目录即可。
+\end_layout
+
+\begin_layout Standard
+第一次执行Android Studio的时候，Android Studio自动检测Android SDK是否存在？如果找不到Android SDK则会提示自动下
+载。根据网络状态的不同，Android SDK的下载可能需要较长的时间。
+\end_layout
+
+\begin_layout Section
+配置SDK Manager
+\end_layout
+
+\begin_layout Standard
+安装Android Studio后，需要配置SDK Manager。SDK Manager的作用是：
+\end_layout
+
+\begin_layout Itemize
+管理不同版本的Android SDK
+\end_layout
+
+\begin_layout Itemize
+管理AVD（Android Virtual Device）
+\end_layout
+
+\begin_layout Standard
+目前阶段配置SDK Manager主要是两个方面的内容：
+\end_layout
+
+\begin_layout Subsection
+设置代理服务器
+\end_layout
+
+\begin_layout Standard
+由于众所周知的原因，在国内无法直接访问www.android.com及其相关站点，因此安装Android SDK之前需要设置合适的代理服务器
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+更多的代理服务器可以查询：http://www.androiddevtools.cn 
+\end_layout
+
+\end_inset
+
+。首先启动SDK Manager，填写合适的代理服务器：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imgs/sdk_manager_option.png
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+设置代理服务器
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+安装需要的Android SDK
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+SDK：（software development kit）软件开发工具包。被软件开发工程师用于为特定的软件包、软件框架、硬件平台、操作系统等建立应用软件的开发
+工具的集合。 因此，Android SDK 指的是Android专属的软件开发工具包。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Android SDK有很多版本，这里安装最新的Android 6.0。敢于Android版本及其SDK的版本对应关系，参见：
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Android版本及其SDK版本"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imgs/sdk_install.png
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+安装Android SDK
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+根据网络状况和代理服务器的稳定性，下载和安装Android SDK可能需要较长的时间，因此建议提前做好安排，比如下班前启动安装程序，第二天一上班就可以享受And
+roid编程的快乐了。
+\end_layout
+
+\end_body
+\end_document
