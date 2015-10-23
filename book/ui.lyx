@@ -83,8 +83,33 @@
 Android界面设计
 \end_layout
 
+\begin_layout Standard
+Android的用户界面设计
+\end_layout
+
 \begin_layout Section
 Android界面设计原理
+\end_layout
+
+\begin_layout Standard
+一个常见的Android应用程序界面如图所示：
+\end_layout
+
+\begin_layout Subsection
+界面控件的类层次结构
+\end_layout
+
+\begin_layout Standard
+一个用户界面由若干界面控件组成，比如字符串显示域（Label）、文本输入框（TextField）、列表框（）、图片（）等等。Android定义了基本的界面控件类
+View，所有的界面控件从View类继承下来，形成了如下的类树：
+\end_layout
+
+\begin_layout Subsection
+按照功能的区域划分
+\end_layout
+
+\begin_layout Subsection
+基于XML的界面描述和表达
 \end_layout
 
 \begin_layout Section
@@ -93,6 +118,10 @@ Android界面控件
 
 \begin_layout Section
 Android界面布局管理器
+\end_layout
+
+\begin_layout Section
+Android高级界面设计
 \end_layout
 
 \begin_layout Section
