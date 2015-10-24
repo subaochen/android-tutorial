@@ -33,7 +33,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -91,10 +91,6 @@ Android的用户界面设计
 Android界面设计原理
 \end_layout
 
-\begin_layout Standard
-一个常见的Android应用程序界面如图所示：
-\end_layout
-
 \begin_layout Subsection
 界面控件的类层次结构
 \end_layout
@@ -104,12 +100,104 @@ Android界面设计原理
 View，所有的界面控件从View类继承下来，形成了如下的类树：
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Android界面控件类图
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ViewGroup
+\end_layout
+
+\begin_layout Standard
+界面的组织图（区别于类图）
+\end_layout
+
 \begin_layout Subsection
 按照功能的区域划分
 \end_layout
 
+\begin_layout Standard
+这是一种常规的界面设计方法，按照界面的功能划分为不同的区域，比如在WEB界面设计中，通常存在导航栏、栏目列表、内容栏等术语。Android的界面在总体上也进行了
+类似的功能划分（手机屏幕的界面截图和功能区域划分的说明图）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Android界面的常见功能划分
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 基于XML的界面描述和表达
+\end_layout
+
+\begin_layout Standard
+Andoid的用户界面通过XML文件来定义，完全不需要通过编写Java代码的方式来构建界面，这是界面设计和描述的一个很大的进步。熟悉java的朋友知道，Java
+的界面设计是通过Java代码来构建的，尽管有图形化的界面设计工具，但是也仅仅是帮助生成界面构建的代码而已。通过代码构建界面的最大问题是不够直观，也会使得程序代码
+很臃肿（界面代码往往数量很庞大），淹没了更加重要的事务逻辑处理的代码。
+\end_layout
+
+\begin_layout Standard
+Android的用户界面XML文件和程序的关系如图所示（如果暂时看不懂这个图，建议在学完本章后再仔细琢磨一下）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+界面XML文件和程序代码的关系
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
