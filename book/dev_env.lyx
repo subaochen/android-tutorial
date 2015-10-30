@@ -120,7 +120,8 @@ Android的开发环境
 \end_layout
 
 \begin_layout Standard
-谷歌已经宣布终止对Eclipse的官方支持，包括中止对Eclipse ADT插件以及Android Ant编译系统的支持，Android Studio
+谷歌已经宣布终止对Eclipse的官方支持，包括中止对Eclipse ols:$ANDROID_SDK/tools:$PATHADT插件以及Android
+ Ant编译系统的支持，Android Studio
 \begin_inset Foot
 status open
 
@@ -309,6 +310,89 @@ roid编程的快乐了。
 \end_layout
 
 \begin_layout Subsection
+配置AndroidSDK环境变量
+\end_layout
+
+\begin_layout Standard
+在debian或者ubuntu中配置环境变量，在命令行中运行一下代码来配置环境变量：
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+gedit ~/.bashrc
+\end_layout
+
+\end_inset
+
+在文件的最末端添加下面内容：
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Android SDK 
+\end_layout
+
+\begin_layout Plain Layout
+
+export ANDROID_SDK=/home/dawndiy/workspace/android/android-sdk-linux 
+\end_layout
+
+\begin_layout Plain Layout
+
+export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
+\end_layout
+
+\end_inset
+
+当然， “ANDROID_SDK=” 后面的内容当然是你自己的 SDK 所在的目录，千万别照搬啊，上面的是一个示例目录。修改好了以后记得保存，最后运行一下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+source ~/.bashrc
+\end_layout
+
+\end_inset
+
+这时可以在命令行中测试adb指令是否可以正确执行。如果你需要 root 权限来执行 sudo adb 的时候提示找不到 adb 命令。解决方法如下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+cd /usr/bin rm -rf adb 
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo ln -s $你的SDK所在目录$/platform-tools/adb
+\end_layout
+
+\end_inset
+
+ 这样就可以解决在 sudo 下也可以使用 adb 了，如果 fastboot 也有这样的情况，同理。
+\end_layout
+
+\begin_layout Subsection
 64位Linux系统的特别处理
 \end_layout
 
@@ -370,6 +454,22 @@ Android SDK自带的模拟器性能不敢恭维，于是就有了第三方模拟
 \begin_layout Enumerate
 当在Android Studio中执行应用程序时，会自动发现已经在运行的genymotion。因此在启动android应用程序之前，需要首先启动genymoti
 on。
+\end_layout
+
+\begin_layout Enumerate
+可以通过在Android Studio中安装genymotion插件来快速启动,步骤为:File->Settings->Plugins->Browse
+ repositeries...搜索genymotion插件安装。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename imgs/Plugin_add.jpg
+	width 60page%
+	height 20pheight%
+
+\end_inset
+
+
 \end_layout
 
 \end_body
