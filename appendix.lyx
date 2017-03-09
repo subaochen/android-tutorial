@@ -511,5 +511,16 @@ ket通讯端口被占用了，非常有可能是因为多次启停模拟器或�
 深入了解Gradle
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "reference"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

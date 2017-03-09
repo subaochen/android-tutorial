@@ -8,15 +8,25 @@
 \begin_preamble
 \input{preamble.tex}
 \end_preamble
+\options openany
 \use_default_options true
+\begin_modules
+logicalmkup
+theorems-bytype
+theorems-sec-bytype
+coderemarks
+tip-inset
+note-inset
+warning-inset
+\end_modules
 \maintain_unincluded_children false
 \language chinese-simplified
 \language_package default
 \inputencoding utf8-plain
 \fontencoding global
-\font_roman "default" "新宋体"
-\font_sans "default" "新宋体"
-\font_typewriter "default" "新宋体"
+\font_roman "default" "DejaVu Sans"
+\font_sans "default" "DejaVu Serif"
+\font_typewriter "default" "DejaVu Sans Mono"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts true
@@ -53,7 +63,7 @@
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 1
+\use_refstyle 0
 \index Index
 \shortcut idx
 \color #008000
@@ -278,37 +288,65 @@ roid编程的快乐了。
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-
 gedit ~/.bashrc
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 在文件的最末端添加下面内容：
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-
 # Android SDK 
 \end_layout
 
 \begin_layout Plain Layout
-
 export ANDROID_SDK=/home/dawndiy/workspace/android/android-sdk-linux 
 \end_layout
 
 \begin_layout Plain Layout
-
 export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
 \end_layout
 
@@ -318,12 +356,25 @@ export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-
 source ~/.bashrc
 \end_layout
 
@@ -333,23 +384,35 @@ source ~/.bashrc
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-
 cd /usr/bin rm -rf adb 
 \end_layout
 
 \begin_layout Plain Layout
-
-sudo ln -s $你的SDK所在目录$/platform-tools/adb
+sudo ln -s $you_sdk_path/platform-tools/adb 
 \end_layout
 
 \end_inset
 
- 这样就可以解决在 sudo 下也可以使用 adb 了，如果 fastboot 也有这样的情况，同理。
+这样就可以解决在 sudo 下也可以使用 adb 了，如果 fastboot 也有这样的情况，同理。
 \end_layout
 
 \begin_layout Subsection
@@ -362,23 +425,33 @@ oid SDK
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-lstparams "basicstyle={\ttfamily},breaklines=true,tabsize=4"
-inline false
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-
 dpkg --add-architecture i386 
 \end_layout
 
 \begin_layout Plain Layout
-
 apt-get update 
 \end_layout
 
 \begin_layout Plain Layout
-
 apt-get install libstdc++6:i386 libgcc1:i386 zlib1g:i386 libncurses5:i386
 \end_layout
 
