@@ -19,19 +19,6 @@ warning-inset
 theorems-bytype
 theorems-sec-bytype
 \end_modules
-\begin_includeonly
-dev_env.lyx
-ui.lyx
-activity.lyx
-contentprovider.lyx
-driver.lyx
-service.lyx
-broadcastreceiver.lyx
-comm.lyx
-data_access.lyx
-map.lyx
-reference.lyx
-\end_includeonly
 \maintain_unincluded_children true
 \begin_local_layout
 PackageOptions url hyphens
@@ -161,6 +148,16 @@ filename "activity.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "ui.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "intent.lyx"
 
 \end_inset
 
