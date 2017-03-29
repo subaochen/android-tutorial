@@ -507,6 +507,27 @@ ket通讯端口被占用了，非常有可能是因为多次启停模拟器或�
 启动Android Studio可以恢复正常。
 \end_layout
 
+\begin_layout Section
+为什么创建第一个App时非常慢？
+\end_layout
+
+\begin_layout Standard
+创建App其实是很快的，但是创建App后，Android Studio会紧接着试图构建（编译）这个app，此时可能需要从网络下载gradle，有67M之多，根据
+你的网络状况，这可能需要一段时间。当然，只有第一次构建app的时候才会尝试下载gradle。
+\end_layout
+
+\begin_layout Standard
+所以，第一次创建App时还需要有一点耐心。
+\end_layout
+
+\begin_layout Section
+如何修改默认的布局管理器？
+\end_layout
+
+\begin_layout Standard
+AS创建的Layout，默认的布局管理器是？
+\end_layout
+
 \begin_layout Chapter
 深入了解Gradle
 \end_layout
