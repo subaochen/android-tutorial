@@ -9,6 +9,15 @@
 \input{preamble.tex}
 \end_preamble
 \use_default_options true
+\begin_modules
+logicalmkup
+coderemarks
+tip-inset
+note-inset
+warning-inset
+theorems-bytype
+theorems-chap-bytype
+\end_modules
 \maintain_unincluded_children false
 \language chinese-simplified
 \language_package default
@@ -124,9 +133,112 @@ Intent的设计意图，即为什么设计一个Intent而不是其他？
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename imgs/intent/startactivityforresult.eps
-	width 90line%
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+设计三个Activity，允许从第一个Activity跳转到第二个或者第三个Activity，也可以从第二或者第三个Activity返回到第一个Activity
+。在Activity之间跳转时，允许使用Intent携带数据。
+\end_layout
+
+\begin_layout Example
+第一个Activity参见
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstlistingname
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "MainActivity.java"
+
+\end_inset
+
+，第二个Activity参见
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstlistingname
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "SubOneActivity.java"
+
+\end_inset
+
+，第三个Activity参见
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstlistingname
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "SubTwoActivity.java"
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "code/intent/StartActivityForResultDemo/app/src/main/java/cn/edu/sdut/softlab/android/MainActivity.java"
+lstparams "caption={MainActivity.java},label={MainActivity.java}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "code/intent/StartActivityForResultDemo/app/src/main/java/cn/edu/sdut/softlab/android/SubOneActivity.java"
+lstparams "caption={SubOneActivity.java},label={SubOneActivity.java}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "code/intent/StartActivityForResultDemo/app/src/main/java/cn/edu/sdut/softlab/android/SubTwoActivity.java"
+lstparams "caption={SubTwoActivity.java},label={SubTwoActivity.java}"
 
 \end_inset
 
