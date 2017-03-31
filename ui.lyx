@@ -8,15 +8,28 @@
 \begin_preamble
 \input{preamble.tex}
 \end_preamble
+\options openany
 \use_default_options true
+\begin_modules
+logicalmkup
+coderemarks
+tip-inset
+note-inset
+warning-inset
+theorems-bytype
+theorems-chap-bytype
+\end_modules
 \maintain_unincluded_children false
+\begin_local_layout
+PackageOptions url hyphens
+\end_local_layout
 \language chinese-simplified
 \language_package default
 \inputencoding utf8-plain
 \fontencoding global
-\font_roman "default" "新宋体"
-\font_sans "default" "新宋体"
-\font_typewriter "default" "新宋体"
+\font_roman "default" "DejaVu Sans"
+\font_sans "default" "DejaVu Serif"
+\font_typewriter "default" "DejaVu Sans Mono"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts true
@@ -29,10 +42,19 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement H
+\float_placement tbph
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -64,7 +86,7 @@
 \paragraph_indentation default
 \quotes_language english
 \papercolumns 1
-\papersides 1
+\papersides 2
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
@@ -202,6 +224,592 @@ Android界面控件
 
 \begin_layout Section
 Android界面布局管理器
+\end_layout
+
+\begin_layout Subsection
+线性布局
+\end_layout
+
+\begin_layout Subsection
+相对布局
+\end_layout
+
+\begin_layout Subsection
+约束布局
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:约束布局"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+约束布局（ContraintLayout）是相对布局的升级版，配合最新的布局编辑器
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Android Studio从2.3版本开始在布局编辑器中支持约束布局，写作本书时Android Studio 2.3已经发布，创建界面的默认布局管理器已经变为约束
+布局。
+\end_layout
+
+\end_inset
+
+（Layout Editor），约束布局堪称布局神器，完全不需要嵌套布局，只在布局编辑器中拖拖拉拉即可完成非常复杂的界面布局。不过，第一次使用约束布局，会发现布
+局编辑器中有很多小图标可能让人困惑，让我们逐步揭开约束布局的神秘面纱。
+\end_layout
+
+\begin_layout Subsubsection
+准备工作
+\end_layout
+
+\begin_layout Standard
+首先需要检查一下Android Studio是否支持约束布局。打开SDK Manager，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:检查是否安装约束布局支持库"
+
+\end_inset
+
+所示，确保已经安装了ConstraintLayout For Android和Solver for ConstraintLayout两个支持库。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/ui/constraintlayout-precondition.png
+	width 80line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+检查是否安装约束布局支持库
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:检查是否安装约束布局支持库"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+基本概念
+\end_layout
+
+\begin_layout Standard
+约束布局的要旨是通过相对位置定位一个控件。如果我们把界面看做一个平面坐标系（原点位于左上角），控件看做坐标系中的一个点，则坐标(x, y)即可以唯一定位到这个点
+，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:平面坐标系中的点"
+
+\end_inset
+
+所示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/ui/point-in-axis.eps
+	width 40line%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+正式发布时改为环绕图形
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+平面坐标系中的点
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:平面坐标系中的点"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+也就是说，在约束布局中，我们至少要设置两个“约束”才能唯一定位一个控件：横向距离参照物的间隔x和纵向距离参照物的间隔y。考虑在界面安放第一个控件的情形，则参照物
+分别为界面的左边界和上边界，即我们安放第一个控件时，至少要设置这个控件距离上边界多远和距离左边界多远。如果不设置横向间距x，则控件默认靠最左边停靠；如果不设置纵
+向间距y，则控件默认靠左上边停靠；可以想象到，如果两个方向的间距都不设置，则控件就跑到最左上角了。如果多个控件都没有设置两个方向的间距，那么这些控件就都挤在左上
+角了。
+\end_layout
+
+\begin_layout Standard
+Android Studio的布局编辑器提供了方便和直观的工具帮助我们快速设置约束条件。我们以按钮为例，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:控件的各种手柄"
+
+\end_inset
+
+所示，每一个控件在布局编辑器中均提供了以下的手柄或者按钮可供操作：
+\end_layout
+
+\begin_layout Description
+约束手柄 在控件的四个方向都提供了约束手柄，这是约束布局中最重要的操作手柄，拖动约束手柄到“参照物”（比如边界或者其他控件的约束手柄）即可创建相应方向的约束关系
+。
+\end_layout
+
+\begin_layout Description
+调整手柄 用于调整控件的大小。参见
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sectionname
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:改变控件的大小"
+
+\end_inset
+
+，并不建议直接拖动调整手柄来调整控件的大小。
+\end_layout
+
+\begin_layout Description
+文字基线设置手柄 用来设置文字按照基线对齐，只有在文字相关控件中才有效。
+\end_layout
+
+\begin_layout Description
+删除约束按钮 点击可删除该控件的所有约束。如果要删除单个约束，单击相应的约束手柄即可。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/ui/control-handlers.png
+	width 60line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+控件的各种手柄
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:控件的各种手柄"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+第一个控件：设置横向约束和纵向约束
+\end_layout
+
+\begin_layout Standard
+有了以上的基础知识，现在我们尝试拖动一个按钮到编辑区，并分别拖动约束手柄到左边界和上边界建立这个按钮的横向和纵向约束，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:建立控件的横向和纵向约束"
+
+\end_inset
+
+所示，按钮距离左边界171dp，距离上边界63dp。设置了横向和纵向约束后，仍然可以拖动控件直观的修改约束值。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Notice
+status open
+
+\begin_layout Plain Layout
+请尝试运行程序，查看按钮是否在我们期望的位置显示出来？
+\end_layout
+
+\begin_layout Plain Layout
+请尝试单击删除横向约束或者纵向约束，甚至删除所有约束，运行一下看看结果有什么不同？
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Warning
+status open
+
+\begin_layout Plain Layout
+在布局编辑器，甚至蓝图中看到的控件位置，未必就是控件的真实位置：如果控件的约束不完整，即如果缺少了横向或者纵向的约束，则控件在布局编辑器中的位置仅表示“设计位置
+”（用来表明设计意图），真实位置和缺失的约束有关：如果缺失横向约束，则控件停靠左边；如果缺失纵向约束，则控件停靠上边。因此，如果发现控件的真实位置和设计位置不相
+符，应该仔细检查控件是否缺少了必备的横向和纵向约束。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/ui/first-controller-x-y.png
+	width 70line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+建立控件的横向和纵向约束
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:建立控件的横向和纵向约束"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+第一个控件：设置水平居中
+\end_layout
+
+\begin_layout Standard
+现在，我们尝试让第一个控件水平居中。方法很简单，分别拖放按钮左右两边的约束手柄到边界，按钮就自动水平居中了，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:控件水平居中"
+
+\end_inset
+
+所示。
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/ui/first-controller-h-center.png
+	width 70line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+控件水平居中
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:控件水平居中"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+。布局编辑器很智能的猜测我们设置水平方向的两个约束，最大的可能性就是为了让控件水平居中，不是吗？注意到，在
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:检查是否安装约束布局支持库"
+
+\end_inset
+
+中，按钮左边距离边界的水平间距是使用绝对数字表示的，而在
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:控件水平居中"
+
+\end_inset
+
+中，按钮水平方向的间距形象的使用了“弹簧线”，表示可伸缩的长度，即水平间距随按钮的长度而变化，详情可参见
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sectionname
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:第一个控件：使用观察器调整控件"
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+同样的道理，拖放按钮上下两边的约束到边界，按钮会自动垂直居中。
+\end_layout
+
+\begin_layout Subsubsection
+第一个控件：使用观察器调整控件
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:第一个控件：使用观察器调整控件"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这里介绍如何调整控件的wrap方式。
+\end_layout
+
+\begin_layout Subsubsection
+自动约束和约束推断
+\end_layout
+
+\begin_layout Subsubsection
+布局编辑器的工具栏
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:布局编辑器的工具栏"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+安放第二个控件
+\end_layout
+
+\begin_layout Subsubsection
+安放一组控件
+\end_layout
+
+\begin_layout Subsubsection
+改变控件的大小
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:改变控件的大小"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
