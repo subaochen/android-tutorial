@@ -756,7 +756,37 @@ reference "subsec:第一个控件：使用观察器调整控件"
 
 \end_inset
 
-。
+。另外，在弹簧线的两端还有一个数字“8”，这是margin
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+需要译为中文吗？如何翻译?
+\end_layout
+
+\end_inset
+
+的默认设置， 我们将在
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sectionname
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:布局编辑器的工具栏"
+
+\end_inset
+
+详细介绍默认margin的设置方法。
 \end_layout
 
 \begin_layout Standard
@@ -775,11 +805,255 @@ name "subsec:第一个控件：使用观察器调整控件"
 \end_layout
 
 \begin_layout Standard
-这里介绍如何调整控件的wrap方式。
+当选中一个控件时，在布局编辑器的右上角是该控件的“观察器”(inspector)，通过观察器可以方便的调整控件的wrap属性和bias属性
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+如何翻译？
 \end_layout
 
-\begin_layout Subsubsection
-自动约束和约束推断
+\end_inset
+
+以及margin设置。首先看一下wrap属性的调整方法，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:在观察器中调整控件的wrap属性"
+
+\end_inset
+
+所示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imgs/ui/wrap-content-in-inspector.eps
+	width 30line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+wrap-content情形
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imgs/ui/fixed-in-inspector.eps
+	width 30line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+fixed固定宽度情形
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fixed固定宽度情形"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imgs/ui/wrap-constraint-in-inspector.eps
+	width 30line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+wrap-constraint情形
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wrap-constraint情形"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+在观察器中调整控件的wrap属性
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:在观察器中调整控件的wrap属性"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+具体操作方式为，单击靠近操作手柄的弹簧线等可以在wrap-content（默认值）、fixed、match constraints三种wrap方式之间切换：
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename imgs/ui/wrap-content-icon.png
+	scale 30
+
+\end_inset
+
+ wrap-content模式，即控件只占用尽量小的空间。
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename imgs/ui/fixed-icon.png
+	scale 30
+
+\end_inset
+
+ fixed模式，即控件的横向尺寸是固定值。
+\end_layout
+
+\begin_layout Description
+\begin_inset Graphics
+	filename imgs/ui/wrap-constraint-icon.png
+	scale 30
+
+\end_inset
+
+ match-constraints模式，即控件根据约束条件尽量占有最大的空间，这和wrap-content是相反的含义。
+\end_layout
+
+\begin_layout Standard
+bias属性的调整很直观，直接拖动滑动条即可，同时可以在设计器和蓝图中看到拖动的效果。当然改变控件的位置也可以直接在设计器界面拖动控件，但是通过拖动滑动条调整b
+ias属性的好处是可以方便的单独调整一个方向的bias属性，不会无意中修改了另外一个方向的bias属性。
+\end_layout
+
+\begin_layout Standard
+margin属性的设置也很直观，直接点击图中的数字即可输入新的margin值，或者从下拉菜单中选择，不再赘述。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Notice
+status open
+
+\begin_layout Plain Layout
+观察器的操作方式比较多，建议读者每次调整参数后，不仅仅通过蓝图或者设计器观察调整的效果，也通过模拟器运行app观察真实的运行效果，加深对观察器操作方式和效果的了
+解。
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -810,6 +1084,10 @@ name "subsec:改变控件的大小"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+约束布局的局限性
 \end_layout
 
 \begin_layout Section
