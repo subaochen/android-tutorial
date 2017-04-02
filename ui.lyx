@@ -1057,22 +1057,306 @@ status open
 \end_layout
 
 \begin_layout Subsubsection
-布局编辑器的工具栏
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:布局编辑器的工具栏"
+安放第二个控件
+\end_layout
+
+\begin_layout Standard
+当我们在布局编辑器中安放好第一个控件后，安放第二个控件的策略就很明确了，此时存在两个参照物：第一个已经安放好的控件和整个屏幕。我们以第一个控件作为参照物为例，一
+般有如下的布局方法：
+\end_layout
+
+\begin_layout Description
+横向对齐 以横向顶部对齐为例，将两个控件顶部的两个约束手柄连接起来就可以了。同样的道理，也可以实现横行底部对齐和横向交叉对齐，如图
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:利用约束手柄横向对齐"
+
+\end_inset
+
+所示。当然，不要忘记了设置控件之间的横向间隔距离。此时，如果拖动第一个控件，会发现第二个控件也会随之移动.请认真体会横向对齐设置后，移动第二个控件时似乎会碰到“一
+堵墙”，这就是横向对齐的效果。
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imgs/ui/h-top-alignment.eps
+	width 30line%
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsubsection
-安放第二个控件
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+横向顶部对齐
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imgs/ui/h-bottom-alignment.eps
+	width 30line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+横向底部对齐
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imgs/ui/h-x-alignment.eps
+	width 30line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+横向交叉对齐
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+利用约束手柄横向对齐
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:利用约束手柄横向对齐"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+纵向对齐 纵向对齐的思路和横向对齐非常类似，只要把两个控件左右两边的约束手柄连接起来，两个控件就构成了纵向对齐，分为纵向左对齐、纵向右对齐和纵向交叉三种形式，不
+再赘述。
 \end_layout
 
 \begin_layout Subsubsection
 安放一组控件
+\end_layout
+
+\begin_layout Standard
+如果要在水平方向均匀放置一组控件，约束布局怎么做呢？布局编辑器依然提供了非常人性化的操作模式，比如三个按钮的水平平均布局见
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:水平均匀安放三个按钮"
+
+\end_inset
+
+，操作步骤如下：
+\end_layout
+
+\begin_layout Enumerate
+拖放三个按钮到编辑区。
+\end_layout
+
+\begin_layout Enumerate
+设置中间按钮到上边界的间距为合适的值。
+\end_layout
+
+\begin_layout Enumerate
+分别将左右两边按钮的顶部约束手柄和中间按钮的顶部约束手柄连接起来，这样三个按钮在水平方向就顶部对齐了。
+\end_layout
+
+\begin_layout Enumerate
+同时选择三个按钮，点击鼠标右键并选择“Center Horizentally”菜单项，即实现了三个按钮横向均匀分布。点击
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:水平均匀安放三个按钮"
+
+\end_inset
+
+中
+\begin_inset Graphics
+	filename imgs/ui/group-links-icon.png
+	scale 40
+
+\end_inset
+
+图标，可以在三种平均分布模式之间切换，请读者自行体会其中的差别。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/ui/group-controllers-h-center.png
+	width 60line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+水平均匀安放三个按钮
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:水平均匀安放三个按钮"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+纵向平均安放一组控件的方法于此类似，不再赘述。
 \end_layout
 
 \begin_layout Subsubsection
@@ -1086,8 +1370,41 @@ name "subsec:改变控件的大小"
 
 \end_layout
 
+\begin_layout Standard
+约束布局中允许任意设置控件的大小，在布局编辑器中也提供了调整手柄用于设置控件大小，但是一般不要通过直接操作调整手柄来设置控件的绝对尺寸，建议通过如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sectionname
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:在观察器中调整控件的wrap属性"
+
+\end_inset
+
+中所述的方法设置控件的相对尺寸。
+\end_layout
+
+\begin_layout Subsubsection
+自动约束和推断约束
+\end_layout
+
 \begin_layout Subsubsection
 约束布局的局限性
+\end_layout
+
+\begin_layout Standard
+约束布局很方便，能够减少界面设计的嵌套层次，大幅度降低界面设计的复杂度。但是，约束布局对于超过一屏的超长页面并不合适，至少目前的布局编辑器无法很好的支持超长页面
+的设计。
 \end_layout
 
 \begin_layout Section
