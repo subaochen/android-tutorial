@@ -79,5 +79,70 @@
 使用BroadcastReceiver
 \end_layout
 
+\begin_layout Section
+广播概述
+\end_layout
+
+\begin_layout Section
+发送广播消息
+\end_layout
+
+\begin_layout Section
+广播接收器
+\end_layout
+
+\begin_layout Section
+注册广播接收器
+\end_layout
+
+\begin_layout Section
+系统广播
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/broadcast/communication.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+广播消息各部分关系图
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:广播消息各部分关系图"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
