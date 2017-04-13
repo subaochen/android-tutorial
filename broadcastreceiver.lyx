@@ -100,10 +100,14 @@
 \end_layout
 
 \begin_layout Standard
+写一个拦截系统广播的例子，比如来电黑名单功能：来电后，如果标记为黑名单，下次来电自动屏蔽。
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center

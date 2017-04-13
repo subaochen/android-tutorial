@@ -102,6 +102,14 @@ theorems-chap-bytype
 Service概念
 \end_layout
 
+\begin_layout Standard
+现在改为onStartCommand替代onStart
+\end_layout
+
+\begin_layout Standard
+需要调用super.onStartCommand()吗？Activity中需要调用？
+\end_layout
+
 \begin_layout Section
 启动和停止Service
 \end_layout
@@ -116,6 +124,31 @@ Intent和Service
 
 \begin_layout Section
 前台进程和后台进程的交互
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Warning
+status open
+
+\begin_layout Plain Layout
+服务在其托管进程的主线程中运行，它既不创建自己的线程，也不在单独的进程中运行（除非另行指定）。 这意味着，如果服务将执行任何 CPU 密集型工作或阻止性操作（例
+如 MP3 播放或联网），则应在服务内创建新线程来完成这项工作。通过使用单独的线程，可以降低发生“应用无响应”(ANR) 错误的风险，而应用的主线程仍可继续专注
+于运行用户与 Activity 之间的交互。
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+参见：https://developer.android.google.cn/guide/components/services.html#Basics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
