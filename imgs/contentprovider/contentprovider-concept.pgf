@@ -1,6 +1,6 @@
-\usetikzlibrary{positioning,arrows.meta}
+\usetikzlibrary{positioning,arrows.meta,quotes}
 \begin{tikzpicture}[every node/.style=draw,
-    label/.style={midway,sloped,above,draw=none,font=\tiny},
+    label/.style={sloped,above,font=\tiny},
     every node/.style={rounded corners,draw}]
     \node(content resolver)[fill=blue!30,draw=blue] {ContentResolver};
     \node(android)[fill=orange!50,rounded corners,draw=orange,above right=of content resolver]{Android System};
@@ -8,10 +8,9 @@
     \node(file system)[below left=of content provider]{File System};
     \node(sqlite)[below=of content provider]{Sqlite};
     \node(network)[below right=of content provider]{network};
-    
 
-    \draw[<->](content resolver) |- (android)node[label,near end]{URI};
-    \draw[<->](android)-|(content provider)node[label,near start]{URI};
+    \draw(content resolver) edge[out=90,in=180,"URI"draw=none,near end,<->,label] (android);
+    \draw(android)edge[out=0,in=100,"URI"draw=none,near start,<->,label](content provider);
     \draw[-](content provider)--(file system)
                (content provider)--(sqlite)
                (content provider)--(network);
