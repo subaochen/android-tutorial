@@ -8,6 +8,7 @@
 \begin_preamble
 \input{preamble.tex}
 \end_preamble
+\options override
 \use_default_options true
 \begin_modules
 logicalmkup
@@ -22,9 +23,9 @@ theorems-chap-bytype
 \language_package default
 \inputencoding utf8-plain
 \fontencoding global
-\font_roman "default" "新宋体"
-\font_sans "default" "新宋体"
-\font_typewriter "default" "新宋体"
+\font_roman "default" "DejaVu Sans"
+\font_sans "default" "DejaVu Serif"
+\font_typewriter "default" "DejaVu Sans Mono"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts true
@@ -40,7 +41,16 @@ theorems-chap-bytype
 \float_placement h
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -72,7 +82,7 @@ theorems-chap-bytype
 \paragraph_indentation default
 \quotes_language english
 \papercolumns 1
-\papersides 1
+\papersides 2
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
