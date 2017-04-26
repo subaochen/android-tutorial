@@ -79,5 +79,15 @@
 使用ContentProvider
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "imgs/contentprovider/contentprovider-concept.pgf"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
