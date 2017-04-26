@@ -9,6 +9,14 @@
 \input{preamble.tex}
 \end_preamble
 \use_default_options true
+\begin_modules
+logicalmkup
+tip-inset
+note-inset
+warning-inset
+theorems-bytype
+theorems-chap-bytype
+\end_modules
 \maintain_unincluded_children false
 \language chinese-simplified
 \language_package default
@@ -83,6 +91,20 @@
 \begin_inset CommandInset include
 LatexCommand include
 filename "imgs/contentprovider/contentprovider-concept.pgf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Tip
+status open
+
+\begin_layout Plain Layout
+运行ContentProivder项目时，需要设置运行参数，不能直接点击“Run”菜单。具体来说，在Run->Edit Configuration中，Lauch
+下拉框中选择No Selection（默认是Activity），这样App部署到模拟器时不会自动启动Activity而导致报告“找不到Activity”。
+\end_layout
 
 \end_inset
 
