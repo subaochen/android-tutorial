@@ -17,7 +17,7 @@ tip-inset
 note-inset
 warning-inset
 theorems-bytype
-theorems-sec-bytype
+theorems-chap-bytype
 \end_modules
 \maintain_unincluded_children true
 \begin_local_layout

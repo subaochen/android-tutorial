@@ -6,20 +6,7 @@
 \origin unavailable
 \textclass beamer
 \begin_preamble
-% see http://deic.uab.es/~iblanes/beamer_gallery/ for how 
-% to choose theme and color
-\usetheme{Warsaw}
-% or AnnArbor, Antibes,Bergen, Berkeley, Berlin, Boadilla,
-%CambridgeUS, Copenhagen, Darmstadt, default, Dresden,
-%Frankfurt, Goettingen, Hannover, Ilmenau, JuanLesPins,
-%Luebeck, Madrid, Malmoe, Marburg, Montpellier, PaloAlto,
-%Pittsburgh, Rochester, Singapore, Szeged, Stockton,
-%boxes, Warsaw…
-
-%\usecolortheme{whale}
-%or albatross, orchid, beaver, rose, beetle, seagull, crane.
-%seahorse, default, sidebartab, dolphin , structure
-%dove, whale, fly, wolverine, lily
+\input{preamble.tex}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -108,20 +95,11 @@ ContentProvider
 \end_layout
 
 \begin_layout Author
-\begin_inset Note Note
-status open
-
-\begin_layout Author
 宿宝臣 <subaochen@126.com>
 \end_layout
 
 \begin_layout Institute
 山东理工大学
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Frame
@@ -161,148 +139,22 @@ ContentProvider的基本概念
 \end_inset
 
 
-\end_layout
-
-\begin_layout Frame
-\begin_inset ERT
+\begin_inset Argument 3
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[every node/.style=draw,
+shrink=10
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
-    label/.style={sloped,above,font=
-\backslash
-footnotesize},
+
 \end_layout
 
-\begin_layout Plain Layout
-
-    every node/.style={rounded corners,draw}]
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-node(content resolver)[fill=blue!30,draw=blue] {ContentResolver};
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-node(android)[fill=orange!50,rounded corners,draw=orange,above right=of
- content resolver]{Android系统};
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-node(content provider) [fill=blue!30,draw=blue,below right=of android]{ContentPr
-ovider};
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-node(file system)[below left=of content provider]{文件系统};
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-node(sqlite)[below=of content provider]{Sqlite数据库};
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-node(network)[below right=of content provider]{网络};
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-node(manifest)[above right=of android,xshift=5mm,yshift=-1cm]{AndroidManifest.xml
-};
-\end_layout
-
-\begin_layout Plain Layout
-
-        
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-draw<1+>(content resolver) edge[out=90,in=180,"URI"draw=none,near end,->,label]
- (android);
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-draw<2+>(android)edge[out=0,in=100,"URI"draw=none,near start,->,label](content
- provider);
-\end_layout
-
-\begin_layout Plain Layout
-
-   
-\backslash
-draw<3+>(content provider)edge[->](content resolver);                  
-                                                   
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-draw<2+>(android.north)edge[out=120,in=50,dotted,sloped,font=
-\backslash
-footnotesize,"根据URI匹配ContentProvider"'draw=none](manifes
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-draw<3+>[-](content provider)--(file system)
-\end_layout
-
-\begin_layout Plain Layout
-
-               (content provider)--(sqlite)
-\end_layout
-
-\begin_layout Plain Layout
-
-               (content provider)--(network);
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tikzpicture}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
+\begin_layout Frame
+\begin_inset CommandInset include
+LatexCommand input
+filename "/home/subaochen/git/android-tutorial/imgs/contentprovider/contentprovider-concept.pgf"
 
 \end_inset
 

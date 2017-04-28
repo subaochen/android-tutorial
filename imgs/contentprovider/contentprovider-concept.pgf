@@ -2,19 +2,19 @@
 \begin{tikzpicture}[every node/.style=draw,
     label/.style={sloped,above,font=\footnotesize},
     every node/.style={rounded corners,draw}]
-    \node(content resolver)[fill=blue!30,draw=blue] {ContentResolver};
-    \node(android)[fill=orange!50,rounded corners,draw=orange,above right=of content resolver]{Android系统};
-    \node(content provider) [fill=blue!30,draw=blue,below right=of android]{ContentProvider};
-    \node(file system)[below left=of content provider]{文件系统};
-    \node(sqlite)[below=of content provider]{Sqlite数据库};
-    \node(network)[below right=of content provider]{网络};
-    \node(manifest)[above right=of android,xshift=5mm,yshift=-1cm]{AndroidManifest.xml};
+    \node<1->(content resolver)[fill=blue!30,draw=blue] {ContentResolver};
+    \node<1->(android)[fill=orange!50,rounded corners,draw=orange,above right=of content resolver]{Android系统};
+    \node<3->(content provider) [fill=blue!30,draw=blue,below right=of android]{ContentProvider};
+    \node<3->(file system)[below left=of content provider]{文件系统};
+    \node<3->(sqlite)[below=of content provider]{Sqlite数据库};
+    \node<3->(network)[below right=of content provider]{网络};
+    \node<2->(manifest)[above right=of android,xshift=5mm,yshift=-1cm,fill=red!20]{AndroidManifest.xml};
 
-    \draw<1+>(content resolver) edge[out=90,in=180,"URI"draw=none,near end,->,label] (android);
-    \draw(android)edge[out=0,in=100,"URI"draw=none,near start,->,label](content provider);
-    \draw(content provider)edge[->](content resolver);
-    \draw(android.north)edge[out=120,in=50,dotted,sloped,font=\footnotesize,"根据URI匹配ContentProvider"'draw=none](manifest.east);
-    \draw[-](content provider)--(file system)
+    \draw<1->(content resolver) edge[out=90,in=180,"URI"draw=none,near end,->,label] (android);
+    \draw<3->(android)edge[out=0,in=100,"URI"draw=none,near start,->,label](content provider);
+    \draw<4->(content provider)edge[->](content resolver);
+    \draw<2->(android.north)edge[out=120,in=50,thick,dotted,sloped,font=\footnotesize,"根据URI匹配ContentProvider"'draw=none,<-](manifest.east);
+    \draw<3->[-](content provider)--(file system)
             (content provider)--(sqlite)
             (content provider)--(network);
 \end{tikzpicture}

@@ -13,11 +13,11 @@
 \begin_modules
 logicalmkup
 theorems-bytype
-theorems-sec-bytype
 coderemarks
 tip-inset
 note-inset
 warning-inset
+theorems-chap-bytype
 \end_modules
 \maintain_unincluded_children false
 \language chinese-simplified
