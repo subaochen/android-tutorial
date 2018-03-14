@@ -1,6 +1,10 @@
-% see http://deic.uab.es/~iblanes/beamer_gallery/ for how 
-% to choose theme and color
-\usetheme{Warsaw}
+% beamer gallery:  http://deic.uab.es/~iblanes/beamer_gallery/  
+% beamer theme matrix: https://hartwork.org/beamer-theme-matrix/
+% another beamer theme matrix: https://mpetroff.net/files/beamer-theme-matrix/
+%\usetheme{Warsaw}
+\usetheme{Hannover}
+% lyx beamer guide采用的样式
+%\usetheme[left,width=3.45em]{Berkeley}
 % or AnnArbor, Antibes,Bergen, Berkeley, Berlin, Boadilla,
 %CambridgeUS, Copenhagen, Darmstadt, default, Dresden,
 %Frankfurt, Goettingen, Hannover, Ilmenau, JuanLesPins,
@@ -13,8 +17,10 @@
 %seahorse, default, sidebartab, dolphin , structure
 %dove, whale, fly, wolverine, lily
 
-\usepackage{xeCJK} % 解决中文无法自动换行问题
+\usepackage{ctex} % 解决中文无法自动换行问题
 
-\usepackage{tikz}
+\usetikzlibrary{positioning,quotes,arrows.meta,decorations.pathreplacing,shapes,graphs,graphdrawing}
+\usegdlibrary{trees, layered}
+%\input{/home/subaochen/git/writing-common/common.tex}
 \input{/home/subaochen/git/writing-common/translations.tex}
 \input{/home/subaochen/git/writing-common/listing.tex}

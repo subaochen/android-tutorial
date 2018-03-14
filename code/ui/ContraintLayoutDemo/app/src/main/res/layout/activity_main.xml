@@ -7,15 +7,25 @@
     tools:context="cn.edu.sdut.softlab.contraintlayoutdemo.MainActivity">
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="207dp"
-        android:layout_height="46dp"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Button"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="76dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="69dp"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="127dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        android:layout_marginTop="-26dp"
+        app:layout_constraintLeft_toRightOf="@+id/button"
+        android:layout_marginLeft="67dp"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.242" />
+        app:layout_constraintHorizontal_bias="0.421" />
 </android.support.constraint.ConstraintLayout>
