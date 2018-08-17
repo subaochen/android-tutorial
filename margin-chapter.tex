@@ -1,0 +1,62 @@
+% see https://tex.stackexchange.com/questions/202450/show-current-chapter-number-on-each-page-margin-with-appendix
+% 在\appendix之前执行\cleardoublepage
+% 在页边显示章节序号
+\usepackage[contents={},opacity=1,scale=1,color=white]{background}%将tikz对象置为页面的背景
+\usepackage{tikzpagenodes}%定义了页面的text area/header/footer等node
+\usepackage{totcount}%获取计数器的最大值
+\usetikzlibrary{calc}
+\usepackage{assoccnt}%创建辅助计数器和给定的计数器一起变化
+
+\newif\ifMaterial
+\definecolor{bgcolor}{rgb}{0.8,0.85,1}%页边色块底色
+
+\newlength\LabelSize
+\setlength\LabelSize{2cm}
+
+% auxiliary counter
+\newcounter{chapshift} %跟踪章序号的变化，即使\appendix之后也可以跟踪（默认的，\appendix会reset chapter counter）
+\newtotcounter{totalchapters} %记录章的总数
+\DeclareAssociatedCounters{chapter}{chapshift,totalchapters}
+
+\AtBeginDocument{%
+    \ifnum\totvalue{totalchapters}>0\relax%防止初始没有章的时候报错
+        \setlength\LabelSize{\dimexpr\textheight/\totvalue{totalchapters}\relax}
+        \ifdim\LabelSize>2cm\relax%TODO没有考虑\LabelSize过小的情况？
+            \global\setlength\LabelSize{2cm}
+        \fi
+    \fi
+}
+
+\newcommand\AddLabels{%
+\Materialtrue%
+\AddEverypageHook{%
+\ifMaterial%
+\ifodd\value{page} %
+ \backgroundsetup{
+  angle=90,
+  position={current page.east|-current page text area.north  east},
+  vshift=3pt,
+  hshift=-\thechapshift*\LabelSize+\LabelSize,%TODO是否可以根据hshift超出了\textheight来进行回退处理？可以有效解决\LabelSize过小的情形
+  contents={% 去掉circle/minimum size将画出矩形
+  \tikz\node[draw, circle,minimum size=\LabelSize, fill=bgcolor,anchor=west,text width=\LabelSize,
+    align=center,text height=15pt,text depth=23pt,font=\large\sffamily] {\thechapter};
+  }%
+ }
+ \else
+ \backgroundsetup{
+  angle=90,
+  position={current page.west|-current page text area.north west},
+  vshift=-3pt,
+  hshift=-\thechapshift*\LabelSize+\LabelSize,
+  contents={%
+  \tikz\node[draw, circle,minimum size=\LabelSize, fill=bgcolor,anchor=west,text width=\LabelSize,
+    align=center,text height=23pt,text depth=15pt,font=\large\sffamily] {\rotatebox{180}{\thechapter}};
+  }%
+ }
+ \fi
+ \BgMaterial%
+\else\relax\fi}%
+}
+
+\newcommand\RemoveLabels{\Materialfalse}
+

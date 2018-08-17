@@ -1,0 +1,44 @@
+\usepackage{listings}
+\usepackage{color}
+\definecolor{colBg}{rgb}{1,1,1} % 白色，便于打印输出，不会和code remarks冲突
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{0.06,0.05,0.03} % 重色便于打印输出，红色打印出来会很模糊
+\definecolor{colString}{rgb}{0,0.5,0}
+\lstset{%
+    language=Java,%可以在使用lstlisting环境时修改语言的设置
+    float=hbp,%
+    basicstyle=\small\ttfamily,%
+    identifierstyle=\color{colIdentifier},%
+    keywordstyle=\bfseries\color{colKeys},%关键字加粗便于黑白打印输出
+    stringstyle=\color{colString},%
+    commentstyle=\itshape\color{colComments},%
+    columns=fixed,
+    tabsize=4,%
+    frame=tb,% 顶部和底部加横线
+    %frame=shadowbox,
+    framerule=1pt,
+    showspaces=false,%
+    showstringspaces=false,%不显示代码字符串中间的空格标记
+    %framexleftmargin=2em, % 行号包含在代码区域内
+    %numbers=left,%左侧显示行号
+    numberstyle=\tiny\ttfamily,%
+    numbersep=1em,%
+    breaklines=true,% 对过长的代码自动换行
+    breakindent=10pt,%
+    backgroundcolor=\color{colBg},%
+    breakautoindent=true,%
+    %escapebegin=\begin{CJK*}{GBK}{hei},escapeend=\end{CJK*},
+    aboveskip=1em, %代码块边框
+    captionpos=t,%
+    %% added by http://bbs.ctex.org/viewthread.php?tid=53451
+    %fontadjust,
+    xleftmargin=1em, xrightmargin=\fboxsep,%设定listing左右的空白
+    %texcl=true,
+    % 设定中文冲突，断行，列模式，数学环境输入，listing数字的样式
+    extendedchars=false,columns=flexible,
+    %mathescape=true, % 启用后貌似没法在代码中使用特殊字符，比如$
+    %可以在(*@和@*)之间插入LaTeX命令
+    escapeinside={(*@}{@*)},
+    escapechar=|
+}
