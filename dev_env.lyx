@@ -6,7 +6,7 @@
 \origin unavailable
 \textclass ctex-book
 \begin_preamble
-\input{preamble.tex}
+\input{../writing-common/book-preamble.tex}
 \end_preamble
 \options openany
 \use_default_options true
@@ -20,6 +20,9 @@ warning-inset
 theorems-chap-bytype
 \end_modules
 \maintain_unincluded_children false
+\begin_local_layout
+PackageOptions url hyphens
+\end_local_layout
 \language chinese-simplified
 \language_package default
 \inputencoding utf8-plain
@@ -64,6 +67,7 @@ theorems-chap-bytype
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #d3d7cf
 \index Index
 \shortcut idx
 \color #008000
@@ -106,6 +110,16 @@ status open
 
 \begin_layout Section
 安装JDK
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+不需要，AS自带光环
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -126,6 +140,16 @@ Android Studio 1.4以上版本需要JDK 7及其以上版本。
 
 \begin_layout Section
 下载和安装Android Studio
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+说明中文开发网址
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -183,7 +207,6 @@ status open
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -505,7 +528,6 @@ on。
 
 \end_layout
 
-<<<<<<< HEAD
 \begin_layout Section
 连接真机
 \end_layout
@@ -518,13 +540,20 @@ on。
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:手机开启开发者模式界面"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
-所示的选项即可。
+所示的选项即可
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+手机需要联网才能打开USB安装和USB调试开关，其道理何在？
+\end_layout
+
+\end_inset
+
+。
 \end_layout
 
 \begin_layout Standard
@@ -537,8 +566,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename imgs/dev-env/Screenshot_android.settings-commented.png
-	lyxscale 50
-	width 30text%
+	lyxscale 40
+	width 40text%
 
 \end_inset
 
@@ -574,12 +603,43 @@ name "fig:手机开启开发者模式界面"
 \end_layout
 
 \begin_layout Standard
-当手机开启了开发者模式后，通过USB线连接到电脑上，在终端输入如下的命令验证一下：
+当手机开启了开发者模式后，通过USB线连接到电脑上，在终端输入如下的命令验证一下，如果列出了手机的型号，就可以把App部署到手机上了：
 \end_layout
 
-=======
->>>>>>> parent of d38ae37... 准备补充连接真机的步骤
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+$ ./adb devices -l
+\end_layout
+
+\begin_layout Plain Layout
+List of devices attached
+\end_layout
+
+\begin_layout Plain Layout
+a353b937 device usb:2-1 product:kenzo model:Redmi_Note_3 device:kenzo transport_
+id:1
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

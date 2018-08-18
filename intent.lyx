@@ -249,5 +249,13 @@ lstparams "caption={SubTwoActivity.java},label={SubTwoActivity.java}"
 Intent过滤器
 \end_layout
 
+\begin_layout Standard
+举例说明，两个Activity响应相同的action
+\end_layout
+
+\begin_layout Standard
+自定义action和Intent的Action的区别和联系？
+\end_layout
+
 \end_body
 \end_document

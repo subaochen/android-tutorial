@@ -72,6 +72,7 @@ theorems-chap-bytype
 \suppress_date false
 \justification true
 \use_refstyle 1
+\boxbgcolor #d3d7cf
 \index Index
 \shortcut idx
 \color #008000
@@ -99,7 +100,7 @@ theorems-chap-bytype
 
 \begin_layout Standard
 \begin_inset CommandInset include
-LatexCommand include
+LatexCommand input
 filename "imgs/contentprovider/contentprovider-concept.pgf"
 
 \end_inset

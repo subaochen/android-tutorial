@@ -6,7 +6,7 @@
 \origin unavailable
 \textclass ctex-book
 \begin_preamble
-\input{preamble.tex}
+\input{../writing-common/book-preamble.tex}
 \end_preamble
 \options openany
 \use_default_options true
@@ -76,6 +76,7 @@ PackageOptions url hyphens
 \suppress_date false
 \justification true
 \use_refstyle 1
+\boxbgcolor #d3d7cf
 \index Index
 \shortcut idx
 \color #008000
