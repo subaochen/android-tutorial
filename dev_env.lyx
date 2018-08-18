@@ -539,7 +539,63 @@ on。
 有的时候，你的电脑可能比较老旧，CPU不支持虚拟计算技术（Intel叫做vt-x，AMD叫做SRM？），这个时候无法开启Android Studio内置的模拟器
 ，只能将app部署到真机测试。把真机作为测试环境的条件是真机上面开启了“开发者模式”，不同的手机可能打开开发者模式的方式不同，这里以小米为例：首先在设置中找到“
 关于手机”菜单，然后多次点击MIUI版本选项，每次点击小米都会给出提示还剩几次点击即可打开开发者模式。当开启了开发者模式后，就可以在“更多设置”菜单中看到“开发
-者选项”这个菜单，进入后打开如所示的选项即可。
+者选项”这个菜单，进入后打开如
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:手机开启开发者模式界面"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+所示的选项即可。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/dev-env/Screenshot_android.settings-commented.png
+	lyxscale 50
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+手机开启开发者模式界面
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:手机开启开发者模式界面"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
