@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -34,8 +34,6 @@ theorems-chap-bytype
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
-\use_microtype false
-\use_dash_ligatures true
 \graphics default
 \default_output_format pdf4
 \output_sync 0
@@ -66,7 +64,6 @@ theorems-chap-bytype
 \suppress_date false
 \justification true
 \use_refstyle 0
-\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -75,10 +72,7 @@ theorems-chap-bytype
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\is_math_indent 0
-\math_numbering_side default
-\quotes_style english
-\dynamic_quotes 0
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -423,16 +417,6 @@ sudo ln -s $you_sdk_path/platform-tools/adb
 
 \begin_layout Subsection
 64位Linux系统的特别处理
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-在ubuntu 18.04及其以后的发布版已经不需要这个步骤了。
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -482,16 +466,6 @@ apt-get install libstdc++6:i386 libgcc1:i386 zlib1g:i386 libncurses5:i386
 
 \begin_layout Section
 更快捷的模拟器：genymotion
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-这个部分已经过时了
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -531,6 +505,7 @@ on。
 
 \end_layout
 
+<<<<<<< HEAD
 \begin_layout Section
 连接真机
 \end_layout
@@ -602,12 +577,10 @@ name "fig:手机开启开发者模式界面"
 当手机开启了开发者模式后，通过USB线连接到电脑上，在终端输入如下的命令验证一下：
 \end_layout
 
+=======
+>>>>>>> parent of d38ae37... 准备补充连接真机的步骤
 \begin_layout Standard
-adb devices
-\end_layout
 
-\begin_layout Standard
-此时点击“运行”按钮，就可以将app部署到真机测试了，如所示。
 \end_layout
 
 \end_body
