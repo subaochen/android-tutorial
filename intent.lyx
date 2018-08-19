@@ -257,5 +257,10 @@ Intent过滤器
 自定义action和Intent的Action的区别和联系？
 \end_layout
 
+\begin_layout Standard
+首先通过定义两个不同的独立的字符串作为action，然后把这两个字符串放到一个接口中，或者类中作为常量，并说明这样做的好处。同样的道理，category也是可以
+自定义的。
+\end_layout
+
 \end_body
 \end_document
