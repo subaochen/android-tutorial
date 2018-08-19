@@ -98,8 +98,14 @@ PackageOptions url hyphens
 
 \begin_body
 
-\begin_layout Title
-Android实用教程
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "frontmatter.tex"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -109,12 +115,32 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "frontmatter.tex"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AddLabels
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+在页边使用章序号导航
+\end_layout
 
 \end_inset
 
@@ -240,9 +266,26 @@ filename "map.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
-LatexCommand include
+LatexCommand input
 filename "appendix.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
 
 \end_inset
 

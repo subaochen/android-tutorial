@@ -537,6 +537,19 @@ on。
 ，只能将app部署到真机测试。把真机作为测试环境的条件是真机上面开启了“开发者模式”，不同的手机可能打开开发者模式的方式不同，这里以小米为例：首先在设置中找到“
 关于手机”菜单，然后多次点击MIUI版本选项，每次点击小米都会给出提示还剩几次点击即可打开开发者模式。当开启了开发者模式后，就可以在“更多设置”菜单中看到“开发
 者选项”这个菜单，进入后打开如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:手机开启开发者模式界面"
@@ -641,6 +654,124 @@ id:1
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+常见问题
+\end_layout
+
+\begin_layout Subsection
+创建AVD时报告/dev/kvm没有权限
+\end_layout
+
+\begin_layout Standard
+在创建AVD时，Android Studio可能会提示当前用户没有操作/dev/kvm的权限，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:创建AVD时报告没有操作/dev/kvm的权限"
+
+\end_inset
+
+所示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/dev-env/avd-dev-kvm-permission.png
+	lyxscale 70
+	width 70line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+创建AVD时报告没有操作/dev/kvm的权限
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:创建AVD时报告没有操作/dev/kvm的权限"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在ubuntu 18.04系统上，需要安装qemu-kvm才能授权普通用户使用/dev/kvm，方法如下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+$ sudo apt-get install qemu-kvm
+\end_layout
+
+\begin_layout Plain Layout
+$ sudo adduser normal-user（你的用户名） kvm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+执行以上命令后需要重启系统或者重新登陆。
 \end_layout
 
 \end_body
