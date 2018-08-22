@@ -518,6 +518,7 @@ on。
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename imgs/Plugin_add.jpg
 	width 60page%
@@ -772,6 +773,200 @@ $ sudo adduser normal-user（你的用户名） kvm
 
 \begin_layout Standard
 执行以上命令后需要重启系统或者重新登陆。
+\end_layout
+
+\begin_layout Subsection
+模拟器闪退，报告错误代码139
+\end_layout
+
+\begin_layout Standard
+模拟器无法正常启动，在Android Studio的Event log窗口提示：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Emulator: Process finished with exit code 139 (interrupted by signal 11:
+ SIGSEGV)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+编辑模拟器属性，将模拟器的图形性能一项改为“software”一般就能够解决问题，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:模拟器的图形加速改为software"
+
+\end_inset
+
+所示。这样可能损失了部分模拟器的性能，根本的解决办法是调查显卡的兼容性？
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/dev-env/avd-emulator-software.png
+	lyxscale 70
+	width 70line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+模拟器的图形加速改为software
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:模拟器的图形加速改为software"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+设计器无法显示空间（空白）
+\end_layout
+
+\begin_layout Standard
+至少在Android Studio 3.1.4版本
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+本质上这是Android Studio的Bug，在后续版本中会修正。
+\end_layout
+
+\end_inset
+
+中，默认的设计器无法显示设计界面，解决办法有多种，最简单的是修改设计器的预览样式，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:修改设计器的预览样式"
+
+\end_inset
+
+所示。默认的预览样式是appTheme，修改为其他样式，比如Light就可以了。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/dev-env/apptheme-design.png
+	width 80line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+修改设计器的预览样式
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:修改设计器的预览样式"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
