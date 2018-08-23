@@ -1,6 +1,9 @@
 **/code/**/out/
+**/code/**/local.properties
+**/code/**/build/
 **/*.bak
 **/*.lyx~
+**/*.dia~
 **/#*.*#
 **/*.class
 **/*.swp

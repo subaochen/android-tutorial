@@ -105,6 +105,14 @@ Android界面设计
 Android的用户界面设计
 \end_layout
 
+\begin_layout Standard
+界面设计的两个重点是：控件本身占多大的空间？这个控件和其他控件的位置关系如何？
+\end_layout
+
+\begin_layout Standard
+通过例子说明android:gravity,android:layout_gravity,android:weight的不同用法
+\end_layout
+
 \begin_layout Section
 Android界面设计原理
 \end_layout
