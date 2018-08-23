@@ -113,6 +113,10 @@ Android的用户界面设计
 通过例子说明android:gravity,android:layout_gravity,android:weight的不同用法
 \end_layout
 
+\begin_layout Standard
+通过逐项增加或者减少配置（xml文件讲解），说明配置选项的作用：选项和效果（图形）的对照，而不是干巴巴的文字。
+\end_layout
+
 \begin_layout Section
 Android界面设计原理
 \end_layout
