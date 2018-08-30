@@ -21,7 +21,12 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item, parent,false);
+        // 使用竖向滚动显示的布局
+        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item, parent,false);
+        // 使用横向滚动显示的布局
+        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item_vertical, parent,false);
+        // 使用瀑布流布局
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item_waterfall, parent,false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }

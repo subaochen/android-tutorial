@@ -532,11 +532,37 @@ AS创建的Layout，默认的布局管理器是？
 深入了解Gradle
 \end_layout
 
+\begin_layout Chapter
+9-patch图片
+\end_layout
+
+\begin_layout Standard
+Android只能放大9-patch图片，不能缩小9-patch图片，因此制作的9-patch图片要尽量小
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simple-guide-9-patch"
+
+\end_inset
+
+：带来的附加好处是，小尺寸的图片加载效率更高。
+\end_layout
+
+\begin_layout Section
+bad patches
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bad-patches"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "reference"
-options "plain"
+bibfiles "common/android"
+options "bibtotoc,IEEEtranS"
 
 \end_inset
 

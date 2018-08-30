@@ -145,6 +145,16 @@ status open
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+把最佳实践集中放到最后一章？这样让读者先试着自己写出自己版本的“最佳实践”，然后和本书给出的最佳实践对照学习，防止读者迫不及待的“偷看答案”，降低学习效果。
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part
@@ -259,6 +269,26 @@ filename "comm.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "map.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "material-design.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "mvc.lyx"
 
 \end_inset
 

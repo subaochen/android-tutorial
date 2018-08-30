@@ -76,73 +76,10 @@
 \begin_body
 
 \begin_layout Chapter
-使用Activity
+使用Material Design
 \end_layout
 
 \begin_layout Standard
-使用音乐播放器和电话说明Activity之间的切换（应用程序间的切换）
-\end_layout
-
-\begin_layout Standard
-寻找一种半遮掩的情形说明暂停状态
-\end_layout
-
-\begin_layout Standard
-画图说明view和Activity的关系（findViewById, getActivity方法的使用场合），也说明一下Fragment/View/Activi
-ty的关系（从API的角度分析）
-\end_layout
-
-\begin_layout Section
-Activity的生命周期
-\end_layout
-
-\begin_layout Standard
-注意解释图中onPause/onResume,onStart/onStop的成对关系：比如，在onResume中申请/创建的资源，一般需要在onPause中释放
-。另外也需要注意到设置onPause和onesume的必要性：用于处理Activity在处于半遮/全遮两种情况。
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imgs/activity/activity-lifecycle.eps
-	width 70line%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Activity的生命周期
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Activity的生命周期"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
