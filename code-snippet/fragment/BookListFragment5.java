@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,7 +17,6 @@ import java.util.List;
 import java.util.Random;
 
 public class BookListFragment extends Fragment {
-    private boolean isTwoPane;
 
     @Nullable
     @Override
@@ -32,15 +30,6 @@ public class BookListFragment extends Fragment {
         BookAdapter bookAdapter = new BookAdapter(getBooks());
         recyclerView.setAdapter(bookAdapter);
         return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        if(getActivity().findViewById(R.id.two_column_layout) != null) {
-            isTwoPane = true;
-        } else
-            isTwoPane = false;
     }
 
     private List<Book> getBooks() {
@@ -81,13 +70,9 @@ public class BookListFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Book book = bookList.get(viewHolder.getAdapterPosition());
-                    if(isTwoPane) {
-                        BookContentFragment bookContentFragment =
-                                (BookContentFragment) getFragmentManager().findFragmentById(R.id.book_content_fragment);
-                        bookContentFragment.refresh(book);
-                    } else {
-                        BookContentActivity.actionStart(getContext(), String.valueOf(book.getId()),book.getTitle(),book.getDesc());
-                    }
+                    BookContentFragment bookContentFragment =
+                            (BookContentFragment) getFragmentManager().findFragmentById(R.id.book_content_fragment);
+                    bookContentFragment.refresh(book);
                 }
             });
             return viewHolder;

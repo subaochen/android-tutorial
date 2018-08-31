@@ -7,11 +7,17 @@
         android:id="@+id/book_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
         android:text="1" />
     <TextView
-        android:id="@+id/book_titile"
+        android:id="@+id/book_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
         android:text="book title here" />
 </LinearLayout>
