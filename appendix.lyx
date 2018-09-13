@@ -63,6 +63,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\boxbgcolor #d3d7cf
 \index Index
 \shortcut idx
 \color #008000
@@ -526,6 +527,33 @@ ket通讯端口被占用了，非常有可能是因为多次启停模拟器或�
 
 \begin_layout Standard
 AS创建的Layout，默认的布局管理器是？
+\end_layout
+
+\begin_layout Section
+support库的很多类以Compat结尾，是什么意思？
+\end_layout
+
+\begin_layout Standard
+Android在发展过程中，不断的增加新功能和修正原有功能的问题，导致了API存在一些稳定性问题，即新版本的API不兼容老版本的API。为此，Android专门
+提供了一个support库来解决API的兼容性问题：使用suppport库中的API即可支持不同版本的Android系统，support库负责解决（掩盖）不同A
+ndroid版本之间的差异。比如Notification，在创建Notification对象时，建议使用support-v4库的NotificationComp
+at来构建，即：
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Notification notification = new NotificationCompat.Builder(Context).build();
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
