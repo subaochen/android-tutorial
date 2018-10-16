@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -37,6 +37,8 @@ PackageOptions url hyphens
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format pdf4
 \output_sync 0
@@ -67,6 +69,7 @@ PackageOptions url hyphens
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \boxbgcolor #d3d7cf
 \index Index
 \shortcut idx
@@ -76,7 +79,10 @@ PackageOptions url hyphens
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -90,61 +96,151 @@ PackageOptions url hyphens
 \begin_body
 
 \begin_layout Chapter
-Android的开发环境
+配置Android开发环境
 \end_layout
 
 \begin_layout Standard
-谷歌已经宣布终止对Eclipse的官方支持，包括中止对Eclipse ols:$ANDROID_SDK/tools:$PATHADT插件以及Android
- Ant编译系统的支持，Android Studio
-\begin_inset Foot
+一个完整的Android开发环境包括两部分：
+\end_layout
+
+\begin_layout Description
+Android
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+Stuido 这是谷歌公司推出的官方支持的Android开发工具，其基于流行的JetBrains IDEA集成开发环境，相信学过Java的读者应该比较熟悉了，因
+此上手Android Studio
+\begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-关于Android Studio和Eclipse的口水战，可以参考：http://www.zhihu.com/question/21534929
+Android Studio
 \end_layout
 
 \end_inset
 
-正式成为Android官方支持的唯一开发环境。使用Android Studio开发Android应用程序的基本步骤如下所述。
+比较容易，只需要再熟悉一下谷歌为开发Android增加的额外功能即可。
 \end_layout
 
-\begin_layout Section
-安装JDK
-\begin_inset Note Note
+\begin_layout Description
+Android
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+SDK 开发Android应用程序中用到的API、系统镜像和调试工具等都在Android SDK中。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-不需要，AS自带光环
+
+\backslash
+par{}
+\end_layout
+
+\end_inset
+
+值得注意的是，开发Android应用程序还需要良好的网络环境，甚至有的时候还需要设置合适的代理服务器加速网络访问，关于这方面的设置请参照
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+sectionname
 \end_layout
 
 \end_inset
 
 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:设置代理服务器"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+。
 \end_layout
 
 \begin_layout Standard
-相信读者对于这个话题已经是老生常谈了，在这里再重点强调几点：
-\end_layout
-
-\begin_layout Itemize
-Android Studio 1.4以上版本需要JDK 7及其以上版本。
-\end_layout
-
-\begin_layout Itemize
-最好在你的开发机器上只保留一个JDK的版本，以免造成不必要的混乱。
-\end_layout
-
-\begin_layout Itemize
-设置JAVA_HOME环境变量。
+另外，Android应用程序对电脑的要求比较高，最好配置8G以上的内存，多核心和高主频的CPU也有助于加快程序的构建和调试速度。
 \end_layout
 
 \begin_layout Section
 下载和安装Android Studio
-\begin_inset Note Note
+\end_layout
+
+\begin_layout Standard
+从谷歌中文开发者网站下载Android Studio
+\begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-说明中文开发网址
+Android Studio
+\end_layout
+
+\end_inset
+
+，网址是 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.android.google.cn/studio/
+\end_layout
+
+\end_inset
+
+，写作本书时，Android Studio的最新版本是3.2.1。
+\end_layout
+
+\begin_layout Standard
+Android Studio是绿色软件，因此安装很简单，直接解压缩到合适的目录即可，以后我们称这个目录为AS_HOME。
+\end_layout
+
+\begin_layout Standard
+在Linux环境下，第一次运行Android Studio需要进入AS_HOME/bin目录，从命令行执行studio.sh脚本：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout LyX-Code
+$ cd $AS_HOME/bin
+\end_layout
+
+\begin_layout LyX-Code
+$ ./studio.sh
 \end_layout
 
 \end_inset
@@ -153,22 +249,117 @@ status open
 \end_layout
 
 \begin_layout Standard
-官方的下载地址：http://developer.android.com/sdk/index.html。由于各种原因，这个网址可能无法访问，我们要感谢inferjay
-（http://www.inferjay.com）的辛勤劳动和贡献，大家也可以从这里下载最新的Android Studio：http://www.androiddev
-tools.cn 。写作本书时，Android Studio的最新版本是1.4。
+在Windows环境下，
 \end_layout
 
 \begin_layout Standard
-Android Studio是绿色软件，因此安装很简单，直接解压缩到合适的目录即可。
+第一次执行Android Studio的时候，Android Studio自动检测Android SDK
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+SDK
+\end_layout
+
+\end_inset
+
+是否已经存在。如果找不到Android SDK则会提示自动下载
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+插入截图
+\end_layout
+
+\end_inset
+
+。根据网络状态的不同，Android SDK的下载可能需要较长的时间。
 \end_layout
 
 \begin_layout Standard
-第一次执行Android Studio的时候，Android Studio自动检测Android SDK是否存在？如果找不到Android SDK则会提示自动下
-载。根据网络状态的不同，Android SDK的下载可能需要较长的时间。
+\begin_inset Flex Notice
+status open
+
+\begin_layout Plain Layout
+在Linux环境下，Android SDK默认安装到$HOME/Android/Sdk目录下，我们可以通过查看这个目录了解Android SDK的组成：
+\end_layout
+
+\begin_layout Plain Layout
+~/Android/Sdk$ tree -d -L 1
+\end_layout
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\begin_layout Plain Layout
+|-- build-tools # 包含不同版本的编译工具
+\end_layout
+
+\begin_layout Plain Layout
+|-- emulator # 模拟器
+\end_layout
+
+\begin_layout Plain Layout
+|-- extras # 本地仓库
+\end_layout
+
+\begin_layout Plain Layout
+|-- fonts # 字体
+\end_layout
+
+\begin_layout Plain Layout
+|-- licenses # 验证文件
+\end_layout
+
+\begin_layout Plain Layout
+|-- patcher # 增量更新
+\end_layout
+
+\begin_layout Plain Layout
+|-- platform-tools # 通用工具文件夹
+\end_layout
+
+\begin_layout Plain Layout
+|-- platforms # 不同版本的平台资源
+\end_layout
+
+\begin_layout Plain Layout
+|-- skins # 虚拟机中的不同效果
+\end_layout
+
+\begin_layout Plain Layout
+|-- sources # 不同版本的源代码
+\end_layout
+
+\begin_layout Plain Layout
+|-- system-images # 虚拟机的镜像文件
+\end_layout
+
+\begin_layout Plain Layout
+`-- tools # 开发测试工具
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
+安装后的配置
+\end_layout
+
+\begin_layout Standard
+理想情况下，第一次运行Android Studio时应该能够自动配置好Android开发的所有环境。但是凡事总有意外，尤其是网络状况不好时，因此有必要了解一下在
+Android Studio中如何手工配置Android开发的各种环境。
+\end_layout
+
+\begin_layout Subsection
 配置SDK Manager
+\end_layout
+
+\begin_layout Standard
+通常情况下，如果网络状况良好，第一次运行Android Studio时会自动下载和配置Android SDK。但是如果
 \end_layout
 
 \begin_layout Standard
@@ -189,6 +380,13 @@ Android Studio是绿色软件，因此安装很简单，直接解压缩到合适
 
 \begin_layout Subsection
 设置代理服务器
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:设置代理服务器"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -438,95 +636,8 @@ sudo ln -s $you_sdk_path/platform-tools/adb
 这样就可以解决在 sudo 下也可以使用 adb 了，如果 fastboot 也有这样的情况，同理。
 \end_layout
 
-\begin_layout Subsection
-64位Linux系统的特别处理
-\end_layout
-
-\begin_layout Standard
-由于Android SDK中的adb等应用程序是32位版本的，对于64位的Linux系统，比如Debian 8 ADM64版本，需要如下处理才能正确运行Andr
-oid SDK
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-dpkg --add-architecture i386 
-\end_layout
-
-\begin_layout Plain Layout
-apt-get update 
-\end_layout
-
-\begin_layout Plain Layout
-apt-get install libstdc++6:i386 libgcc1:i386 zlib1g:i386 libncurses5:i386
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 创建AVD
-\end_layout
-
-\begin_layout Section
-更快捷的模拟器：genymotion
-\end_layout
-
-\begin_layout Standard
-Android SDK自带的模拟器性能不敢恭维，于是就有了第三方模拟器，其中的佼佼者是genymotion。genymotion的安装使用步骤如下：
-\end_layout
-
-\begin_layout Enumerate
-在genymotion的官网注册用户：http://www.genymotion.com
-\end_layout
-
-\begin_layout Enumerate
-下载安装genymotion
-\end_layout
-
-\begin_layout Enumerate
-运行genymotion，创建AVD
-\end_layout
-
-\begin_layout Enumerate
-当在Android Studio中执行应用程序时，会自动发现已经在运行的genymotion。因此在启动android应用程序之前，需要首先启动genymoti
-on。
-\end_layout
-
-\begin_layout Enumerate
-可以通过在Android Studio中安装genymotion插件来快速启动,步骤为:File->Settings->Plugins->Browse
- repositeries...搜索genymotion插件安装。
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename imgs/Plugin_add.jpg
-	width 60page%
-	height 20pheight%
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -763,7 +874,8 @@ $ sudo apt-get install qemu-kvm
 \end_layout
 
 \begin_layout Plain Layout
-$ sudo adduser normal-user（你的用户名） kvm
+$ sudo adduser normal-user（你的用户名） kvm # 比如在我这里，命令为：sudo adduser subaochen
+ kvm
 \end_layout
 
 \end_inset
@@ -896,7 +1008,7 @@ name "fig:模拟器的图形加速改为software"
 status open
 
 \begin_layout Plain Layout
-本质上这是Android Studio的Bug，在后续版本中会修正。
+本质上这是Android Studio的Bug，在后续版本中会修正（Android Studio 3.2版本已经修复此问题）。
 \end_layout
 
 \end_inset
