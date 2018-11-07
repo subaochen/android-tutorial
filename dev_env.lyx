@@ -144,6 +144,7 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 par{}
 \end_layout
@@ -155,6 +156,7 @@ par{}
 status open
 
 \begin_layout Plain Layout
+
 
 \backslash
 sectionname
@@ -770,6 +772,38 @@ id:1
 
 \begin_layout Section
 常见问题
+\end_layout
+
+\begin_layout Subsection
+如何理解Android SDK和Android Studio的关系？
+\end_layout
+
+\begin_layout Standard
+两码事
+\end_layout
+
+\begin_layout Subsection
+安装Android Studio时，需要设置代理服务器（proxy）吗？
+\end_layout
+
+\begin_layout Standard
+网络好，就不需要设置。国内好用的proxy列表？
+\end_layout
+
+\begin_layout Subsection
+直接复制一个别人的Android SDK，如何配置Android Studio？
+\end_layout
+
+\begin_layout Standard
+进入settings配置
+\end_layout
+
+\begin_layout Subsection
+创建新的Android项目后，报告sync错误怎么办？
+\end_layout
+
+\begin_layout Standard
+截图说明
 \end_layout
 
 \begin_layout Subsection
