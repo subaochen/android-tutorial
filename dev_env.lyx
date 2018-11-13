@@ -795,7 +795,75 @@ id:1
 \end_layout
 
 \begin_layout Standard
-进入settings配置
+打开Settings界面，搜索SDK，然后设置SDK的路径即可，参见
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figurename
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:设置SDK路径"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imgs/dev-env/sdk-location.png
+	width 80line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+设置SDK路径
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:设置SDK路径"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -803,7 +871,14 @@ id:1
 \end_layout
 
 \begin_layout Standard
-截图说明
+截图说明，此时需要重新同步项目：点击Android Studio工具栏右上角附近的sync按钮
+\begin_inset Graphics
+	filename imgs/dev-env/sync-toolbar.png
+	height 0.8em
+
+\end_inset
+
+，等待文件同步完成即可。根据网络状况，也许需要多次同步才能最终成功。
 \end_layout
 
 \begin_layout Subsection
@@ -918,7 +993,15 @@ $ sudo adduser normal-user（你的用户名） kvm # 比如在我这里，命�
 \end_layout
 
 \begin_layout Standard
-执行以上命令后需要重启系统或者重新登陆。
+执行以上命令后需要重启系统。
+\end_layout
+
+\begin_layout Subsection
+创建AVD时报告/dev/kvm is nout found
+\end_layout
+
+\begin_layout Standard
+需要确定你的CPU支持虚拟化：进入BIOS检查CPU设置，查看一下关于虚拟化的设置开关是否打开。
 \end_layout
 
 \begin_layout Subsection
