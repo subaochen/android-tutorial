@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -24,6 +24,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format pdf4
 \output_sync 0
@@ -54,6 +56,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -62,7 +65,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -105,7 +111,7 @@ Activity的生命周期
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -139,6 +145,49 @@ name "fig:Activity的生命周期"
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+启动Activity
+\end_layout
+
+\begin_layout Subsection
+显示启动Activity
+\end_layout
+
+\begin_layout Standard
+Intent intent = new Intent(MainActivity.this, SecondActivity.class)；
+\end_layout
+
+\begin_layout Standard
+如何理解上面的this和class？
+\end_layout
+
+\begin_layout Standard
+this的意义：
+\end_layout
+
+\begin_layout Enumerate
+Intent构造方法参数的要求，context。
+\end_layout
+
+\begin_layout Enumerate
+每一个类都一个默认的静态属性this指针。
+\end_layout
+
+\begin_layout Enumerate
+有可能，构造Intent对象时不在当前context中，比如在onClick方法中构造Intent，需要明确说明context是在MainActivity.thi
+s，而非OnClickListener的匿名对象的context中。
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+需要研究Object.this的定义方法和使用方法
 \end_layout
 
 \end_inset
