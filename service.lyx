@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -34,6 +34,8 @@ theorems-chap-bytype
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format pdf4
 \output_sync 0
@@ -73,6 +75,7 @@ theorems-chap-bytype
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -81,7 +84,10 @@ theorems-chap-bytype
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
@@ -112,6 +118,30 @@ Service概念
 
 \begin_layout Section
 启动和停止Service
+\end_layout
+
+\begin_layout Standard
+隐式启动时，要传递package参数：
+\end_layout
+
+\begin_layout Standard
+Intent intent = new Intent();
+\end_layout
+
+\begin_layout Standard
+intent.setAction(...);
+\end_layout
+
+\begin_layout Standard
+intent.setPackage(MainActivity.this.getPackageName());
+\end_layout
+
+\begin_layout Standard
+startService(intent);
+\end_layout
+
+\begin_layout Standard
+要调查为什么要传递package参数？
 \end_layout
 
 \begin_layout Section
