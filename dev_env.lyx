@@ -1157,7 +1157,7 @@ reference "fig:修改设计器的预览样式"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1189,13 +1189,33 @@ name "fig:修改设计器的预览样式"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+保存项目的路径中存在中文字符
+\end_layout
+
+\begin_layout Standard
+项目路径中不能有中文，截图说明
+\end_layout
+
+\begin_layout Subsection
+项目目录非空
+\end_layout
+
+\begin_layout Standard
+项目目录必须为空目录，自动创建的项目目录没有问题，自己选择的目录必须为空目录。
+\end_layout
+
+\begin_layout Subsection
+关于Intel CPU的VX设置问题
+\end_layout
+
+\begin_layout Standard
+某些Intel CPU必须在bios中打开虚拟计算开关
 \end_layout
 
 \end_body
